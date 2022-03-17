@@ -14,4 +14,4 @@ Steps to run this project:-
 
 6) Now run mintMeERC721 function of Token contract with TokenURI, Amount of test Token1, Token2.
 
-7)Done!!
+7) Done!!
