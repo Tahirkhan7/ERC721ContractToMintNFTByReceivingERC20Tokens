@@ -12,6 +12,6 @@ Steps to run this project:-
 
 5) Copy Token contract address and paste it in transferOwnership function of TestERC721 contract and run.
 
-6) Now run mintMeERC721 function of Token contract with TokenURI, Amount of test Token1, Token2. run
+6) Now run mintMeERC721 function of Token contract with TokenURI, Amount of test Token1, Token2.
 
 7)Done!!
