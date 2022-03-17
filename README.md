@@ -1,4 +1,4 @@
-ERC721 Contract To Mint NFT By Receiving ERC20 Tokens.
+# ERC721 Contract To Mint NFT By Receiving ERC20 Tokens.
 
 Steps to run this project:-
 
