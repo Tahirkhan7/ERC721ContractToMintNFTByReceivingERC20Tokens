@@ -69,26 +69,5 @@ describe("Token Contract", function () {
   
       });
 
-      
-
-
-//     it("Should fail if sender does not have atleast 100 test1 tokens", async function () {
-//       const initialOwnerBalance = await hardhatToken.balanceOf(owner.address); //10000
-//       await expect(
-//         hardhatToken.connect(token1).transfer(owner.address, 1) //initially - 0 tokens token1
-//       ).to.be.revertedWith("Not enough tokens");
-//       expect(await hardhatToken.balanceOf(owner.address)).to.equal(
-//         initialOwnerBalance
-//       );
-//     });
-
-//     it("Should update balances after transfers", async function () {
-//       const initialOwnerBalance = await hardhatToken.balanceOf(owner.address);
-//       await hardhatToken.transfer(token1.address, 5);
-//       await hardhatToken.transfer(token2.address, 10);
-
-//       const finalOwnerBalance = await hardhatToken.balanceOf(owner.address);
-//       expect(finalOwnerBalance).to.equal(initialOwnerBalance - 15);
-//     });
   });
 });
