@@ -19,10 +19,10 @@ constructor(address token1,address token2,address erctest){
     function mintMeERC721(string memory tokenURI)  public {
         require(amountToken1>=100,"Test1 Token need to be greater than or equals to 100!");
         require(amountToken2>=200,"Test1 Token need to be greater than or equals to 200!");
-        ERC20(test1).approve(address(erc721),amountToken1);
+        ERC20(test1).approve(address(this),amountToken1);
         ERC20(test1).transferFrom(msg.sender, address(this), amountToken1);
         test1.mint(address(this),amountToken1);
-        ERC20(test2).approve(address(erc721),amountToken1);
+        ERC20(test2).approve(address(this),amountToken1);
         ERC20(test2).transferFrom(msg.sender, address(this), amountToken1);
         test2.mint(address(this),amountToken2);
         erc721.sendERC721(address(this),msg.sender,tokenURI);
