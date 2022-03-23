@@ -24,7 +24,7 @@ constructor(address token1,address token2,address erctest){
             "Token 1 allowance should be greater than equals to 100"
         );
         require(
-            test1.allowance(msg.sender, address(this)) >= amountToken1,
+            test1.allowance(msg.sender, address(this)) >= amountToken2,
             "Token 2 allowance should be greater than equals to 200"
         );
         bool sent1=ERC20(test1).transferFrom(msg.sender, address(this), amountToken1);
