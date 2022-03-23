@@ -19,12 +19,18 @@ constructor(address token1,address token2,address erctest){
     function mintMeERC721(string memory tokenURI,uint amountToken1, uint amountToken2)  public {
         require(amountToken1>=100,"Test1 Token need to be greater than or equals to 100!");
         require(amountToken2>=200,"Test1 Token need to be greater than or equals to 200!");
-        ERC20(test1).approve(address(this),amountToken1);
-        ERC20(test1).transferFrom(msg.sender, address(this), amountToken1);
-        test1.mintToken1(address(this),amountToken1);
-        ERC20(test2).approve(address(this),amountToken2);
-        ERC20(test2).transferFrom(msg.sender, address(this), amountToken2);
-        test2.mintToken2(address(this),amountToken2);
+        require(
+            test1.allowance(msg.sender, address(this)) >= amountToken1,
+            "Token 1 allowance should be greater than equals to 100"
+        );
+        require(
+            test1.allowance(msg.sender, address(this)) >= amountToken1,
+            "Token 2 allowance should be greater than equals to 200"
+        );
+        bool sent1=ERC20(test1).transferFrom(msg.sender, address(this), amountToken1);
+        require(sent1,"Token 1 transfer failed!");
+        bool sent2=ERC20(test2).transferFrom(msg.sender, address(this), amountToken2);
+        require(sent2, "Token 2 transfer failed");
         erc721.sendERC721(address(this),msg.sender,tokenURI);
     }
 }
